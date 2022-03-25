@@ -11,14 +11,14 @@ const port = process.env.PORT || 3000
 
 // Basic auth
 // Set USERNAME and PASSWORD environment variables
-//const basic = auth.basic({
-//  realm: 'Salesforce Lightning Design System Prototype'
-//}, (username, password, next) => {
-//  next(username === process.env.USERNAME && password === process.env.PASSWORD)
-//})
-//
-//if (process.env.USERNAME && process.env.PASSWORD) {
-////  app.use(auth.connect(basic))
+const basic = auth.basic({
+  realm: 'Salesforce Lightning Design System Prototype'
+}, (username, password, next) => {
+  next(username === process.env.USERNAME && password === process.env.PASSWORD)
+})
+
+if (process.env.USERNAME && process.env.PASSWORD) {
+  app.use(auth.connect(basic))
 }
 
 app.use('/', express.static('./dist'))
