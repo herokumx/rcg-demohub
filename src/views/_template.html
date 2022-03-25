@@ -451,7 +451,9 @@
 
   <main class="app-wrapper slds-template_default">
     {% block content %}
-      <!-- Content from HTML files gets injected here -->
+    <div -webkit-overflow-scrolling: touch; overflow: auto;>
+      <iframe class="iframe" name="iframe" src="http://www.heroku.com" width="100%" marginwidth="0" style="border: none; max-width:100%;"></iframe>
+      </div>    
     {% endblock %}
   </main>
   <script src="/scripts/app.js"></script>
